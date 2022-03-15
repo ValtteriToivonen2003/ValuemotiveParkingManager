@@ -8,7 +8,7 @@ import java.util.Random;
 import com.lemon.Car;
 import com.lemon.ParkingSlot;
 
-public class ParkingUtils {
+public class ParkingManager {
 
 	private static final Random random = new Random(System.currentTimeMillis());
 

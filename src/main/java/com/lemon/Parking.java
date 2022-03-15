@@ -11,7 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.lemon.ParkingException;
-import com.lemon.ParkingUtils;
+import com.lemon.ParkingManager;
 
 public class Parking {
 
@@ -34,7 +34,7 @@ public class Parking {
 	}
 	
 	public Optional<ParkingSlot> checkin(Car car) {
-		Optional<ParkingSlot> slot = ParkingUtils.getFirstAvailableSlot(this.getNbSlot().get(car.getType()));
+		Optional<ParkingSlot> slot = ParkingManager.getFirstAvailableSlot(this.getNbSlot().get(car.getType()));
 		slot.ifPresent(s -> {
 			car.setCheckinDate(LocalDateTime.now());
 			s.setAvailable(false);
@@ -45,7 +45,7 @@ public class Parking {
 	}
 
 	public double checkout(Car car) {
-		Optional<ParkingSlot> slot = ParkingUtils.getSlotByCar(this.getNbSlot().get(car.getType()), car);
+		Optional<ParkingSlot> slot = ParkingManager.getSlotByCar(this.getNbSlot().get(car.getType()), car);
 		slot.ifPresent(s -> {
 			car.setCheckoutDate(LocalDateTime.now());
 			s.setAvailable(true);
@@ -56,7 +56,7 @@ public class Parking {
 	}
 
 	public long selectAllAvailableSlots(CarTypeEnum type) {
-		return ParkingUtils.selectAvailableSlots(this.getNbSlot().get(type));
+		return ParkingManager.selectAvailableSlots(this.getNbSlot().get(type));
 	}
 
 	

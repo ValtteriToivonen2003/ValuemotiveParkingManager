@@ -1,6 +1,6 @@
 package com.lemon;
 
-import com.lemon.ParkingUtils;
+import com.lemon.ParkingManager;
 
 
 public class ParkingSlot {
@@ -13,7 +13,7 @@ public class ParkingSlot {
 	private boolean available;
 
 	public ParkingSlot() {
-		this.setNumber(ParkingUtils.generateId());
+		this.setNumber(ParkingManager.generateId());
 		this.setAvailable(true);
 	}
 
