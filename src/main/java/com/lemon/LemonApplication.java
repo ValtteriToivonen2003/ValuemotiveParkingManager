@@ -13,6 +13,10 @@ public class LemonApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(LemonApplication.class, args);
 	}
+	@RequestMapping(value= "/user")
+	public Principal user(Principal principal) {
+		return principal;
+	}
 	
 
 }

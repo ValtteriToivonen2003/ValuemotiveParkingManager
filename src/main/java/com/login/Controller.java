@@ -10,7 +10,7 @@ public class Controller {
 	
 	@GetMapping("/")
 	String index(Principal principal) {
-		return principal != null ? "hello" : "homeNotSignedIn";
+		return principal != null ? "signedIn" : "homeNotSignedIn";
 		
 	}
 }
