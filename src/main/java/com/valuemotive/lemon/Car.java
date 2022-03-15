@@ -1,8 +1,8 @@
-package com.lemon;
+package com.valuemotive.lemon;
 
 import java.time.LocalDateTime;
 
-import com.lemon.ParkingException;
+import com.valuemotive.lemon.ParkingException;
 
 public class Car {
 

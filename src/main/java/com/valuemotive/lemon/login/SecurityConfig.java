@@ -1,4 +1,4 @@
-package com.login;
+package com.valuemotive.lemon.login;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

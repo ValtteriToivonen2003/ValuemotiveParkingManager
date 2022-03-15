@@ -1,4 +1,4 @@
-package com.lemon;
+package com.valuemotive.lemon;
 
 public enum CarTypeEnum {
 	

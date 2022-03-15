@@ -1,6 +1,6 @@
-package com.lemon;
+package com.valuemotive.lemon;
 
-import com.lemon.ParkingException;
+import com.valuemotive.lemon.ParkingException;
 
 public class ParkingBuilder {
 

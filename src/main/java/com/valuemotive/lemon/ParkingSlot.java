@@ -1,6 +1,6 @@
-package com.lemon;
+package com.valuemotive.lemon;
 
-import com.lemon.ParkingManager;
+import com.valuemotive.lemon.ParkingManager;
 
 
 public class ParkingSlot {

@@ -1,12 +1,12 @@
-package com.lemon;
+package com.valuemotive.lemon;
 
 
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 
-import com.lemon.Car;
-import com.lemon.ParkingSlot;
+import com.valuemotive.lemon.Car;
+import com.valuemotive.lemon.ParkingSlot;
 
 public class ParkingManager {
 

@@ -1,4 +1,4 @@
-package com.login;
+package com.valuemotive.lemon.login;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.Ordered;
