@@ -1,31 +1,22 @@
 package com.valuemotive.lemon.login;
 
+
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 @Configuration
-@EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		
-		http 
-			.authorizeRequests()
-				.antMatchers("/resources/**").permitAll()
-				.anyRequest().authenticated()
-				.and()
-			.formLogin()
-				.loginPage("/LoginPage.html")
-				.permitAll()
-				.and()
-			.oauth2Login()
-				.and()
-			.logout()
-				.permitAll();
-		
-	}
+    @Override
+    public void configure(HttpSecurity http) throws Exception {
+
+        http
+                .antMatcher("/**").authorizeRequests()
+                .antMatchers(new String[]{"/"}).permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .oauth2Login();
+    }
 }
 				
 
