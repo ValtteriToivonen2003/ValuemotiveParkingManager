@@ -9,6 +9,14 @@ public class LoginController {
 	
 	@GetMapping("/")
     public String LoginPage() {
-        return "LoginPage.html";
+       return "LoginPage.html";
     }
+	
+	@GetMapping("/ParkingPage")
+	public String ParkingPage() {
+		return "ParkingPage.html";
+		
+	}
+	
+
 }
