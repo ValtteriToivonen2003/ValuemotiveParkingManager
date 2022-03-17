@@ -17,6 +17,10 @@ public class LoginController {
 		return "ParkingPage.html";
 		
 	}
+	@GetMapping("/Error")
+	public String error() {
+		return "Error.html";
+	}
 	
 
 }
