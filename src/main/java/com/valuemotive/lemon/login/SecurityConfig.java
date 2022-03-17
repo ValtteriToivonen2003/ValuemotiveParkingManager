@@ -12,10 +12,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http
                 .antMatcher("/**").authorizeRequests()
-                .antMatchers(new String[]{"/"}).permitAll()
-                .anyRequest().authenticated()
+                .antMatchers(new String[]{"/"}).permitAll();
+          /*      .anyRequest().authenticated()
                 .and()
-                .oauth2Login();
+                .oauth2Login();*/
     }
 }
 				
