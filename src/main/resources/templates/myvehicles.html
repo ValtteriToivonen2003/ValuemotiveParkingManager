@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name"viewport" content="width=device-width",initial-scale=1>
 	<title>Parking manager Page Layout</title>
 	<style>
-		tablee, th, td{
+		table, th, td{
 			border:1px solid black
 			}
 		.head1 {
@@ -37,6 +38,49 @@
 		.menu-log {
 			right: auto;
 			float: right;
+		}
+		
+		/*popup container */
+		.popup{
+			position: relative;
+			display: inline-block;
+			cursor: pointer;
+			-webkit-user-select: none; 
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+		/*popup*/
+		.popup .popuptext{
+			visibility: hidden;
+			width: 160px;
+  			background-color: #555;
+  			color: #fff;
+  			text-align: center;
+  			border-radius: 6px;
+ 			padding: 8px 0;
+ 			position: absolute;
+  			z-index: 1;
+ 			bottom: 125%;
+  			left: 50%;
+  			margin-left: -80px;
+			}
+			
+			/*popup arrow*/
+			.popup .popuptext::after{
+			 content: "";
+  			position: absolute;
+  			top: 100%;
+  			left: 50%;
+  			margin-left: -5px;
+  			border-width: 5px;
+  			border-style: solid;
+  			border-color: #555 transparent transparent transparent;
+			}
+			
+		/*popup visibility*/
+		.popup .show{
+		visibility: visible;
 		}
 		footer {
 			width: 100%;
@@ -75,7 +119,9 @@
 	<!-- Body section -->
 	<div class = "body_sec">
 		<section id="Content">
+		
 		logged in as "user"
+		
 		<table>
 			<tr>
 				<th>license plate</th>
@@ -86,6 +132,18 @@
 				<td>"licese plate 3"</td>
 			</tr>
 		</table>
+		<div class="popup"
+		onclick="myFunction()">register new vehicle!
+			<span class="popuptext"
+			id="mypopup">Insert information getter here</span>
+			</div>
+			<script>
+			function myfunction(){
+				var popup = 
+					document.getElementById("myPopup");
+						popup.ClassList.toggle("show");
+			}
+			</script>
 		</section>
 	</div>
 	
