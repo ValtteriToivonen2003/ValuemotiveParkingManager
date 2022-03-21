@@ -20,9 +20,5 @@ public class LoginController {
 		return "myvehicles.html";
 	}
 	
-	@GetMapping("/error")
-	public String error() {
-		return "Error.html";
-	}
 	
 }
