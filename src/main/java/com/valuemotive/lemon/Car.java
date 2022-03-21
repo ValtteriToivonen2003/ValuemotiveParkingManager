@@ -6,7 +6,7 @@ import com.valuemotive.lemon.ParkingException;
 
 public class Car {
 
-	private final String matricule;
+	private final String licensePlate;
 
 	private final CarTypeEnum type;
 
@@ -16,7 +16,7 @@ public class Car {
 
 	public Car(String matricule, CarTypeEnum type) {
 		super();
-		this.matricule = matricule;
+		this.licensePlate = matricule;
 		this.type = type;
 	}
 
@@ -57,8 +57,8 @@ public class Car {
 		return type;
 	}
 
-	public String getMatricule() {
-		return matricule;
+	public String getlicensePlate() {
+		return licensePlate;
 	}
 
 }

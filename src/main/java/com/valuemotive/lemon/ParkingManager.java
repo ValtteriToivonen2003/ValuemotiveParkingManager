@@ -27,7 +27,7 @@ public class ParkingManager {
 		if (slotList == null || car == null) {
 			return Optional.empty();
 		}
-		return slotList.stream().filter(s -> s.getCar().getMatricule().equals(car.getMatricule())).findFirst();
+		return slotList.stream().filter(s -> s.getCar().getlicensePlate().equals(car.getlicensePlate())).findFirst();
 
 	}
 

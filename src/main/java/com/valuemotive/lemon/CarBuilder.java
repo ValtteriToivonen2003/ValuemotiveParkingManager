@@ -4,12 +4,12 @@ import com.valuemotive.lemon.ParkingException;
 
 public class CarBuilder {
 
-	private String matricule;
+	private String licensePlate;
 
 	private CarTypeEnum type;
 
 	public CarBuilder setMatricule(String matricule) {
-		this.matricule = matricule;
+		this.licensePlate = matricule;
 		return this;
 	}
 
@@ -19,14 +19,14 @@ public class CarBuilder {
 	}
 
 	public Car build() {
-		if (this.matricule == null) {
+		if (this.licensePlate == null) {
 			throw new ParkingException("you should initialize the matricule");
 		}
 
 		if (this.type == null) {
 			throw new ParkingException("you should initialize the car type");
 		}
-		return new Car(matricule, type);
+		return new Car(licensePlate, type);
 	}
 
 }

@@ -3,24 +3,26 @@ package com.valuemotive.lemon.login;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-
 @Controller
 public class LoginController {
 	
-/*	@GetMapping("/")
+	@GetMapping("/")
     public String LoginPage() {
-       return "LoginPage.html";
+       return "LoginPage";
     }
-	*/
-	@GetMapping("/ParkingPage")
+	
+	@GetMapping("/parkingpage")
 	public String ParkingPage() {
 		return "ParkingPage.html";
-		
 	}
-	@GetMapping("/Error")
+	@GetMapping("/myvehicles")
+	public String myvehicles() {
+		return "myvehicles.html";
+	}
+	
+	@GetMapping("/error")
 	public String error() {
 		return "Error.html";
 	}
 	
-
 }

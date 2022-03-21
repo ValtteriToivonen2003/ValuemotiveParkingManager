@@ -39,7 +39,7 @@ public class Parking {
 			car.setCheckinDate(LocalDateTime.now());
 			s.setAvailable(false);
 			s.setCar(car);
-			LOGGER.info("car <{}> checked in on slot number <{}>", car.getMatricule(), s.getNumber());
+			LOGGER.info("car <{}> checked in on slot number <{}>", car.getlicensePlate(), s.getNumber());
 		});
 		return slot;
 	}
