@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name"viewport" content="width=device-width",initial-scale=1>
+
 	<title>Parking manager Page Layout</title>
 	<style>
 		table, th, td{
@@ -130,30 +130,35 @@
 	<div class = "body_sec">
 		<section id="Content">
 		
-		logged in as "user"
+		<h1>logged in as "user"</h1> 
 		
-		<table>
-			<tr>
-				<th>license plate</th>
-			</tr>
-			<tr>
-				<td>"licese plate 1"</td>
-				<td>"licese plate 2"</td>
-				<td>"licese plate 3"</td>
-			</tr>
-		</table>
 		<div class="popup"
 		onclick="myFunction()">register new vehicle!
 			<span class="popuptext"
 			id="mypopup">Insert information getter here</span>
-			</div>
-			<script>
+		</div>
+		<script>
 			function myfunction(){
 				var popup = 
-					document.getElementById("myPopup");
-						popup.ClassList.toggle("show");
+			document.getElementById("myPopup");
+				popup.ClassList.toggle("show");
 			}
-			</script>
+		</script>
+		
+		<table>
+			<tr>
+				<td>car1</td>
+				<td>"license plate 1"</td>
+			</tr>
+			<tr>
+				<td>car2</td>
+				<td>"license plate 2"</td>
+			</tr>
+			<tr>
+				<td>car3</td>
+				<td>"license plate 3"</td>
+			</tr>
+		</table>
 		</section>
 	</div>
 	
