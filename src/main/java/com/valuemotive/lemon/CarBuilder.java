@@ -20,7 +20,7 @@ public class CarBuilder {
 
 	public Car build() {
 		if (this.licensePlate == null) {
-			throw new ParkingException("you should initialize the matricule");
+			throw new ParkingException("you should initialize the license plate");
 		}
 
 		if (this.type == null) {

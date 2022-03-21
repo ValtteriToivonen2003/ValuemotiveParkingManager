@@ -14,9 +14,9 @@ public class Car {
 
 	private LocalDateTime checkoutDate;
 
-	public Car(String matricule, CarTypeEnum type) {
+	public Car(String licensePlate, CarTypeEnum type) {
 		super();
-		this.licensePlate = matricule;
+		this.licensePlate = licensePlate;
 		this.type = type;
 	}
 
