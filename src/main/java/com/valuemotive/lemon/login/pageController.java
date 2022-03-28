@@ -2,9 +2,13 @@ package com.valuemotive.lemon.login;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class pageController {
+	
+	private CarRepository carRepo ;
 	
 	@GetMapping("/parkingpage")
 	public String ParkingPage() {
@@ -12,6 +16,12 @@ public class pageController {
 	}
 	@GetMapping("/myvehicles")
 	public String myvehicles() {
+		return "myvehicles.html";
+	}
+	
+	@GetMapping("/vehicle/add")
+	public String addvehicle(@RequestParam String regNum, @RequestParam String carName) {
+		
 		return "myvehicles.html";
 	}
 	

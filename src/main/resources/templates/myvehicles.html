@@ -6,19 +6,19 @@
 <style>
 /*table desing */
 table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
 }
 
 td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+	background-color: #dddddd;
 }
 
 .head1 {
@@ -26,7 +26,7 @@ tr:nth-child(even) {
 	color: white;
 	background-color: black;
 	font-weight: bold;
-	Text-align: Center ;
+	Text-align: Center;
 }
 
 body {
@@ -221,6 +221,32 @@ footer {
 
 			<button onclick="togglePopup()" class="first-button">Register
 				A New Vehicle</button>
+				
+				<table style="width: 80%">
+				<tr>
+					<th>Name</th>
+					<th>License plate</th>
+					<th>Date of permission</th>
+				</tr>
+
+				<tr>
+					<td>Valtteri Toivonen</td>
+					<td>ENR-134</td>
+					<td>21.3.2022</td>
+				</tr>
+
+				<tr>
+					<td>Valtteri Toivonen</td>
+					<td>ENR-134</td>
+					<td>21.3.2022</td>
+				</tr>
+
+				<tr>
+					<td>Valtteri Toivonen</td>
+					<td>ENR-134</td>
+					<td>21.3.2022</td>
+				</tr>
+			</table>
 
 			<!-- Popup window to register a new vehicle -->
 			<div class="popup" id="popup-1">
@@ -233,18 +259,19 @@ footer {
 					<!-- get car information -->
 
 					<h1>Register A New Vehicle</h1>
-					<form action=" http://localhost:3000/vehicles" method="POST"
-						onsubmit="submitReservations(event)">
+					<form action="#" th:action="@{/CarRepository}" th:object="${CarRepository}" method="post" >
 						<br> 
-						<input type="text" id="RegNum" name="RegNum" placeholder="Register Number">
+						<label for="regNum">Register Number</label>
+						<br>
+						<input type="text" id="regNum" name="regNum" placeholder="ABC-123 etc:"> 
+						<br>  
+						<br>
+						<label for="carName">A Name For Your Car: </label>
+						<br>
+						<input type="text" id="carName" name="carName" placeholder="Car Name">
 						<br> 
-						<label for="RegNum">ABC-123 etc</label>
-						 <br> 
-						 <br> 
-						 <input type="text" id="CarName" name="CarName" placeholder="Car Name">
-						 <br> 
-						 <label for="CarName">A Name For Your Car </label>
-						 <input type="submit" class="second-button" value="Register A New Vehicle">
+						<input type="submit" class="second-button"
+							value="Register A New Vehicle" onclick="togglepopup()">
 					</form>
 
 
@@ -257,75 +284,12 @@ footer {
 						document.getElementById("popup-1").classList
 							.toggle("active");
 					}
-					function submitvehicles(e) {
-						e.preventDefault()
-					
-						const RegNum = e.target[0].value
-						const CarName = e.target[1].value
-					
-						fetch(' http://localhost:3000/vehicles', {
-							method: 'POST',
-							headers: {
-								"Content-Type": "application/json"
-							},
-							body: JSON.stringify({
-								RegNum: RegNum,
-								CarName: CarName
-							})
-						});
-					}
-					
 					
 					</script>
-
+				
 				</div>
 			</div>
 
-			<!-- Table to display Car information -->
-			<table class="table">
-				<thead></thead>
-				<tbody></tbody>
-			</table>
-			<script >
-				async function loadIntoTable() { 
-				/*	const tableHead = table.querySelector("thead");*/	
-					const tableBody = table.querySelector("tbody");
-					const response = await fetch(url);
-					const { vehicles } = await response.json();
-						
-						
-					//tableHead.innerHTML = "<tr></tr>";
-					tableBody.innerHTML = "";
-					
-					// populates the headers
-					
-					/*for ( const headerText of headers){
-						const headerElement = document.createElement("th");
-						
-						headerElement.textContent = headerText;
-						tablehead.querySelector("tr").appendChild(headerElement); 
-						
-					}*/
-					
-					// populate the rows
-					for(const row of vehicles){
-						const rowElement = document.createElement("tr");
-						
-						for(const celltext of row)	{
-							const cellElement = document.createElement("td");
-							
-							cellElement.textContent = cellText;
-							rowElements.appendChild(cellElement);						
-						}
-						
-						tableBody.appendChild(rowElement);
-	
-					}
-				}
-				loadIntoTable("http://localhost:3000/vehicles", document.querySelector("table"));
-				
-				
-			</script>
 		</section>
 	</div>
 

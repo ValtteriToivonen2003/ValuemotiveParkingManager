@@ -3,8 +3,20 @@
 <head>
 <title>Parking manager Page Layout</title>
 <style>
-table, th, td {
-	border: 1px solid black
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
 }
 
 .head1 {
@@ -249,7 +261,7 @@ footer {
 						<option value="Car1">Car2</option>
 						<option value="Car1">Car3</option>
 					</select> <br> <input type="submit" class="second-button"
-						value="Register a new permit">
+						value="Register a new permit" onclick="togglePopup()">
 
 
 					<!-- popup script -->
