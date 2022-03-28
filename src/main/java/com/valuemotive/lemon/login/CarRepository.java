@@ -15,10 +15,7 @@ public class CarRepository {
 		for (String i : carList.keySet()) {
 			System.out.println("Car: " + i + carList.get(i));
 		}
-		
-		
-		
-		
+
 	}
 
 }

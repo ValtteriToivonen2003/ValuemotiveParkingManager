@@ -116,9 +116,8 @@ a {
 .first-button {
 	border-radius: 20px;
 	border: none;
-	position: absolute;
-	top: 50%;
-	left: 20%;
+	position: relative;
+	left: 10%; 
 	color: white;
 	font-size: 16px;
 	font-weight: 500;
@@ -259,7 +258,7 @@ footer {
 					<!-- get car information -->
 
 					<h1>Register A New Vehicle</h1>
-					<form action="#" th:action="@{/CarRepository}" th:object="${CarRepository}" method="post" >
+					<form action="#" th:action="@{/vehicle/add}" th:object="${CarRepository}" method="post" >
 						<br> 
 						<label for="regNum">Register Number</label>
 						<br>
