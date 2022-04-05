@@ -10,7 +10,6 @@ public class ParkingBuilder {
 		this.parking = new Parking();
 	}
 
-	
 	public ParkingBuilder addSlots(CarTypeEnum carType, int nbSlots) {
 		this.parking.initSlots(carType, nbSlots);
 		return this;

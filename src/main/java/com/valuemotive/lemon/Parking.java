@@ -1,4 +1,5 @@
 package com.valuemotive.lemon;
+
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
@@ -19,7 +20,6 @@ public class Parking {
 
 	private Map<CarTypeEnum, List<ParkingSlot>> nbSlot;
 
-
 	public static ParkingBuilder builder() {
 		return new ParkingBuilder();
 	}
@@ -32,7 +32,7 @@ public class Parking {
 		List<ParkingSlot> slots = Stream.generate(ParkingSlot::new).limit(nbSlots).collect(Collectors.toList());
 		this.getNbSlot().put(type, slots);
 	}
-	
+
 	public Optional<ParkingSlot> checkin(Car car) {
 		Optional<ParkingSlot> slot = ParkingManager.getFirstAvailableSlot(this.getNbSlot().get(car.getType()));
 		slot.ifPresent(s -> {
@@ -58,9 +58,6 @@ public class Parking {
 	public long selectAllAvailableSlots(CarTypeEnum type) {
 		return ParkingManager.selectAvailableSlots(this.getNbSlot().get(type));
 	}
-
-	
-
 
 	public Map<CarTypeEnum, List<ParkingSlot>> getNbSlot() {
 		if (this.nbSlot == null) {

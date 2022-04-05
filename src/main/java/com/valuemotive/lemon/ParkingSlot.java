@@ -2,9 +2,7 @@ package com.valuemotive.lemon;
 
 import com.valuemotive.lemon.ParkingManager;
 
-
 public class ParkingSlot {
-
 
 	private long number;
 
@@ -20,7 +18,6 @@ public class ParkingSlot {
 	public long getNumber() {
 		return number;
 	}
-
 
 	public void setNumber(long number) {
 		this.number = number;

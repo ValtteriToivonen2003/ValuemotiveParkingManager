@@ -40,7 +40,6 @@ public class Car {
 		return checkinDate;
 	}
 
-	
 	public void setCheckinDate(LocalDateTime checkinDate) {
 		this.checkinDate = checkinDate;
 	}

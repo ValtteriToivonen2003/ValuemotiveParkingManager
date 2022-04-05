@@ -1,3 +1,5 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -221,31 +223,31 @@ footer {
 			<button onclick="togglePopup()" class="first-button">Register
 				A New Vehicle</button>
 				
-				<table style="width: 80%">
+			<table style="width: 100%"id="carList">
+				<thead>
 				<tr>
-					<th>Name</th>
-					<th>License plate</th>
-					<th>Date of permission</th>
+				<td>Register Number</td>
+				<td>carname</td>
+				
 				</tr>
-
-				<tr>
-					<td>Valtteri Toivonen</td>
-					<td>ENR-134</td>
-					<td>21.3.2022</td>
-				</tr>
-
-				<tr>
-					<td>Valtteri Toivonen</td>
-					<td>ENR-134</td>
-					<td>21.3.2022</td>
-				</tr>
-
-				<tr>
-					<td>Valtteri Toivonen</td>
-					<td>ENR-134</td>
-					<td>21.3.2022</td>
-				</tr>
+				</thead>
+					<c:forEach var="regNum", "carName" items="{reguestScope.carList}">
+				<tbody>
+					<tr>
+					<td>{regNum[0]}
+					<td>{carName[0]}
+					</tr>
+					<tr>
+					<td>{regNum[1]}
+					<td>{carName[1]}
+					</tr>
+					<tr>
+					<td>{regNum[2]}
+					<td>{carName[2]}
+					</tr>
 			</table>
+				
+
 
 			<!-- Popup window to register a new vehicle -->
 			<div class="popup" id="popup-1">

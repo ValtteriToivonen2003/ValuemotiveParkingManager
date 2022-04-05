@@ -1,6 +1,5 @@
 package com.valuemotive.lemon;
 
-
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
@@ -15,6 +14,7 @@ public class ParkingManager {
 	public static int generateId() {
 		return Math.abs(random.nextInt());
 	}
+
 	public static final Optional<ParkingSlot> getFirstAvailableSlot(List<ParkingSlot> slotList) {
 		if (slotList == null) {
 			return Optional.empty();
