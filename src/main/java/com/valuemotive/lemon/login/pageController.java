@@ -21,9 +21,8 @@ public class pageController {
 		return "myvehicles.html";
 	}
 
-	@PostMapping(path = "/vehicle/add", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+	@GetMapping("/vehicle/add")
 	public String addvehicle(@RequestBody Input input) {
-
 		return "myvehicles.html";
 	}
 

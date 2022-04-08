@@ -12,9 +12,9 @@ public class CarRepository {
 		carList.put(regNum, carName);
 		carList.put(regNum, carName);
 
-		request.setAttribute("carList", messages);
-
-        request.getRequestDispatcher("/myvehicles.html").forward(request, response);
+		for (String car : carList.keySet()) {
+			System.out.println("Car: " + car + carList.get(car));
+		}
 
 	}
 
