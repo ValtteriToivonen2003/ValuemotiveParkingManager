@@ -22,7 +22,7 @@ public class pageController {
 	}
 
 	@GetMapping("/vehicle/add")
-	public String addvehicle(@RequestBody Input input) {
+	public String addVehicle(@RequestBody Input input) {
 		return "myvehicles.html";
 	}
 
