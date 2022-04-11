@@ -18,7 +18,7 @@ public class Parking {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(Parking.class);
 
-	private Map<CarTypeEnum, List<ParkingSlot>> nbSlot;
+	private Map<CarTypeEnum, List<ParkingSlot>> nbSlotMap;
 
 	public static ParkingBuilder builder() {
 		return new ParkingBuilder();
