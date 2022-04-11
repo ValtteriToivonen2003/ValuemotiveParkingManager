@@ -17,7 +17,7 @@ public class pageController {
 	}
 
 	@GetMapping("/myvehicles")
-	public String myvehicles() {
+	public String myVehicles() {
 		return "myvehicles.html";
 	}
 
