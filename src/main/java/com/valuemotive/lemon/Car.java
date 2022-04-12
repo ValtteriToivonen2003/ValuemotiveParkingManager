@@ -1,12 +1,12 @@
-package com.lemon;
+package com.valuemotive.lemon;
 
 import java.time.LocalDateTime;
 
-import com.lemon.ParkingException;
+import com.valuemotive.lemon.ParkingException;
 
 public class Car {
 
-	private final String matricule;
+	private final String regNum;
 
 	private final CarTypeEnum type;
 
@@ -14,9 +14,9 @@ public class Car {
 
 	private LocalDateTime checkoutDate;
 
-	public Car(String matricule, CarTypeEnum type) {
+	public Car(String regNum, CarTypeEnum type) {
 		super();
-		this.matricule = matricule;
+		this.regNum = regNum;
 		this.type = type;
 	}
 
@@ -40,7 +40,6 @@ public class Car {
 		return checkinDate;
 	}
 
-	
 	public void setCheckinDate(LocalDateTime checkinDate) {
 		this.checkinDate = checkinDate;
 	}
@@ -57,8 +56,8 @@ public class Car {
 		return type;
 	}
 
-	public String getMatricule() {
-		return matricule;
+	public String getlicensePlate() {
+		return regNum;
 	}
 
 }

@@ -1,10 +1,8 @@
-package com.lemon;
+package com.valuemotive.lemon;
 
-import com.lemon.ParkingUtils;
-
+import com.valuemotive.lemon.ParkingManager;
 
 public class ParkingSlot {
-
 
 	private long number;
 
@@ -13,14 +11,13 @@ public class ParkingSlot {
 	private boolean available;
 
 	public ParkingSlot() {
-		this.setNumber(ParkingUtils.generateId());
+		this.setNumber(ParkingManager.generateId());
 		this.setAvailable(true);
 	}
 
 	public long getNumber() {
 		return number;
 	}
-
 
 	public void setNumber(long number) {
 		this.number = number;

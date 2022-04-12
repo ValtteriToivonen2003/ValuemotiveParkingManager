@@ -1,4 +1,5 @@
-package com.lemon;
+package com.valuemotive.lemon;
+
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
@@ -10,15 +11,14 @@ import java.util.stream.Stream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.lemon.ParkingException;
-import com.lemon.ParkingUtils;
+import com.valuemotive.lemon.ParkingException;
+import com.valuemotive.lemon.ParkingManager;
 
 public class Parking {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(Parking.class);
 
-	private Map<CarTypeEnum, List<ParkingSlot>> nbSlot;
-
+	private Map<CarTypeEnum, List<ParkingSlot>> nbSlotMap;
 
 	public static ParkingBuilder builder() {
 		return new ParkingBuilder();
@@ -32,20 +32,20 @@ public class Parking {
 		List<ParkingSlot> slots = Stream.generate(ParkingSlot::new).limit(nbSlots).collect(Collectors.toList());
 		this.getNbSlot().put(type, slots);
 	}
-	
+
 	public Optional<ParkingSlot> checkin(Car car) {
-		Optional<ParkingSlot> slot = ParkingUtils.getFirstAvailableSlot(this.getNbSlot().get(car.getType()));
+		Optional<ParkingSlot> slot = ParkingManager.getFirstAvailableSlot(this.getNbSlot().get(car.getType()));
 		slot.ifPresent(s -> {
 			car.setCheckinDate(LocalDateTime.now());
 			s.setAvailable(false);
 			s.setCar(car);
-			LOGGER.info("car <{}> checked in on slot number <{}>", car.getMatricule(), s.getNumber());
+			LOGGER.info("car <{}> checked in on slot number <{}>", car.getlicensePlate(), s.getNumber());
 		});
 		return slot;
 	}
 
 	public double checkout(Car car) {
-		Optional<ParkingSlot> slot = ParkingUtils.getSlotByCar(this.getNbSlot().get(car.getType()), car);
+		Optional<ParkingSlot> slot = ParkingManager.getSlotByCar(this.getNbSlot().get(car.getType()), car);
 		slot.ifPresent(s -> {
 			car.setCheckoutDate(LocalDateTime.now());
 			s.setAvailable(true);
@@ -56,11 +56,8 @@ public class Parking {
 	}
 
 	public long selectAllAvailableSlots(CarTypeEnum type) {
-		return ParkingUtils.selectAvailableSlots(this.getNbSlot().get(type));
+		return ParkingManager.selectAvailableSlots(this.getNbSlot().get(type));
 	}
-
-	
-
 
 	public Map<CarTypeEnum, List<ParkingSlot>> getNbSlot() {
 		if (this.nbSlot == null) {
