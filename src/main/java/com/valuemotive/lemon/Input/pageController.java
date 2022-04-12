@@ -2,6 +2,7 @@ package com.valuemotive.lemon.Input;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,7 +23,8 @@ public class pageController {
 	}
 
 	@GetMapping("/Vehicle/Add")
-	public String addVehicle(@RequestBody Input input) {
+	public String addVehicle(Model model) {
+	//	model.addAttribute("cars", cars.findAll());
 		return "MyVehicles.html";
 	}
 

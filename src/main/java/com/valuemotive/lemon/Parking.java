@@ -15,9 +15,12 @@ public class Parking {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(Parking.class);
 
+
 	private final Map<CarTypeEnum, List<ParkingSlot>> nbSlot = new HashMap<>();
 	
 	private ParkingManager parkingManager ;
+
+	private Map<CarTypeEnum, List<ParkingSlot>> nbSlotMap;
 
 	public void initSlots(CarTypeEnum type, long nbSlot) throws ParkingException {
 		if (nbSlot < 0) {
