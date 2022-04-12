@@ -1,8 +1,12 @@
 package com.valuemotive.lemon;
 
-import com.valuemotive.lemon.ParkingManager;
+import java.time.LocalDateTime;
 
 public class ParkingSlot {
+	
+	private LocalDateTime CheckinDate;
+	
+	private LocalDateTime CheckoutDate;
 
 	private long number;
 
@@ -11,10 +15,8 @@ public class ParkingSlot {
 	private boolean available;
 
 	public ParkingSlot() {
-		this.setNumber(ParkingManager.generateId());
-		this.setAvailable(true);
+		
 	}
-
 	public long getNumber() {
 		return number;
 	}
@@ -38,5 +40,23 @@ public class ParkingSlot {
 	public void setAvailable(boolean available) {
 		this.available = available;
 	}
+	
+	public static Object getCheckinDate() {
+		return null;
+	}
+	public static Object getCheckoutDate() {
+		return null;
+	}
+
+	public static void setCheckoutDate(LocalDateTime now) {
+		
+	}
+	public static void setCheckinDate(LocalDateTime now) {
+		
+		
+	}
+	
+	
 
 }
+

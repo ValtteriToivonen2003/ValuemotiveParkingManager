@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<title>Parking manager Page Layout</title>
+
 </head>
 <style>
 	table {
@@ -408,62 +409,70 @@
 	<div class="body_sec">
 		<section id="Content">
 
-			<!-- Table -->
-			<table style="width: 100%" id="carlist">
-				<thead>
-					<tr>
-						<td>Register Number</td>
-						<td>car Name</td>
-
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>input
-						<td>input
-					</tr>
-					<tr>
-						<td>input
-						<td>input
-					</tr>
-					<tr>
-						<td>input
-						<td>input
-					</tr>
-				</tbody>
-			</table>
-
-			<!-- button to open a popup -->
+			<h2>logged in as "user"</h2>
 
 			<button onclick="togglePopup()" class="first-button">Register
 				A New Vehicle</button>
 
-			<!-- Popup to register A new Permit -->
+			<table style="width: 100%">
+				<thead>
+					<tr>
+						<td>Register Number</td>
+						<td>car Name</td>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td></td>
+					</tr>
+				</tbody>
+
+			</table>
+
+
+			<!-- Popup window to register a new vehicle -->
 			<div class="popup" id="popup-1">
 				<div class="content">
 					<!-- close button -->
 
-
 					<div class="close-btn" onclick="togglePopup()">×</div>
 
-					<!-- Registering a new permit for your vehicle  -->
-					<h1>give a permit to a vehicle</h1>
-					<label for="Vehicles">Choose your vehicle:</label> <select car="Vehicles" id="Vehicles">
-						<option value="Car1">Car1</option>
-						<option value="Car1">Car2</option>
-						<option value="Car1">Car3</option>
-					</select> <br> <input type="submit" class="second-button" value="Register a new permit"
-						onclick="togglePopup()">
+
+					<!-- get car information -->
+
+					<h1>Register A New Vehicle</h1>
+					<form action="#" th:action="@{/vehicle/add}" th:object="${CarRepository}" method="post">
+						<br>
+						<label for="regNum">Register Number</label>
+						<br>
+						<input type="text" id="regNum" name="regNum" placeholder="ABC-123 etc:">
+						<br>
+						<br>
+						<label for="carName">A Name For Your Car: </label>
+						<br>
+						<input type="text" id="carName" name="carName" placeholder="Car Name">
+						<br>
+						<input type="submit" class="second-button" value="Register A New Vehicle"
+							onclick="togglepopup()">
+					</form>
 
 
-					<!-- popup script -->
+
+
+					<!-- popup button -->
+
 					<script>
 						function togglePopup() {
 							document.getElementById("popup-1").classList
 								.toggle("active");
 						}
+
 					</script>
+
 				</div>
+			</div>
+
 		</section>
 	</div>
 

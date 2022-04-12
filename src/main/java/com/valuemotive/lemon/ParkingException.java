@@ -1,6 +1,6 @@
 package com.valuemotive.lemon;
 
-public class ParkingException extends IllegalArgumentException {
+public class ParkingException extends Exception {
 
 	private static final long serialVersionUID = 1L;
 

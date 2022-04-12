@@ -1,4 +1,4 @@
-package com.valuemotive.lemon.login;
+package com.valuemotive.lemon.Input;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -16,14 +16,14 @@ public class pageController {
 		return "ParkingPage.html";
 	}
 
-	@GetMapping("/myvehicles")
+	@GetMapping("/MyVehicles")
 	public String myvehicles() {
-		return "myvehicles.html";
+		return "MyVehicles.html";
 	}
 
-	@GetMapping("/vehicle/add")
-	public String addvehicle(@RequestBody Input input) {
-		return "myvehicles.html";
+	@GetMapping("/Vehicle/Add")
+	public String addVehicle(@RequestBody Input input) {
+		return "MyVehicles.html";
 	}
 
 }

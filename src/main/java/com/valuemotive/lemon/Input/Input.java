@@ -1,4 +1,4 @@
-package com.valuemotive.lemon.login;
+package com.valuemotive.lemon.Input;
 
 public class Input {
 
