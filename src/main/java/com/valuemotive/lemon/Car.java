@@ -17,17 +17,7 @@ public class Car {
 		this.type = type;
 	}
 
-	public void checkDatesAfterCheckout() {
-		if (ParkingSlot.getCheckinDate() == null) {
-			throw new ParkingException("the car checkin date is not set");
-		}
-		if (ParkingSlot.getCheckoutDate() == null) {
-			throw new ParkingException("the car checkout date is not set");
-		}
-		if (ParkingSlot.getCheckinDate() .isAfter(ParkingSlot.getCheckoutDate())) {
-			throw new ParkingException("the checkin/checkout dates are not coherent");
-		}
-	}
+
 
 	public CarTypeEnum getType() {
 		return type;
