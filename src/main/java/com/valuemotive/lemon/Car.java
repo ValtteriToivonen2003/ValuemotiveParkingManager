@@ -24,7 +24,7 @@ public class Car {
 		if (ParkingSlot.getCheckoutDate() == null) {
 			throw new ParkingException("the car checkout date is not set");
 		}
-		if (ParkingSlot.getCheckoutDate() .isAfter(ParkingSlot.getCheckinDate())) {
+		if (ParkingSlot.getCheckinDate() .isAfter(ParkingSlot.getCheckoutDate())) {
 			throw new ParkingException("the checkin/checkout dates are not coherent");
 		}
 	}
