@@ -1,8 +1,10 @@
 package com.valuemotive.lemon;
 
-import com.valuemotive.lemon.ParkingManager;
+import java.time.LocalDateTime;
 
 public class ParkingSlot {
+
+	
 
 	private long number;
 
@@ -11,8 +13,7 @@ public class ParkingSlot {
 	private boolean available;
 
 	public ParkingSlot() {
-		this.setNumber(ParkingManager.generateId());
-		this.setAvailable(true);
+
 	}
 
 	public long getNumber() {
@@ -38,5 +39,7 @@ public class ParkingSlot {
 	public void setAvailable(boolean available) {
 		this.available = available;
 	}
+
+
 
 }

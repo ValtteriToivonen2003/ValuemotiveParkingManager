@@ -5,8 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-public class LemonApplication {
+public class ParkingManagerApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(LemonApplication.class, args);
+		SpringApplication.run(ParkingManagerApplication.class, args);
 	}
 }

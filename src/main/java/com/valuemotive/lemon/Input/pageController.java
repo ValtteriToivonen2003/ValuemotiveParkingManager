@@ -1,7 +1,8 @@
-package com.valuemotive.lemon.login;
+package com.valuemotive.lemon.Input;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,14 +17,15 @@ public class pageController {
 		return "ParkingPage.html";
 	}
 
-	@GetMapping("/myvehicles")
-	public String myVehicles() {
-		return "myvehicles.html";
+	@GetMapping("/MyVehicles")
+	public String myvehicles() {
+		return "MyVehicles.html";
 	}
 
-	@GetMapping("/vehicle/add")
-	public String addVehicle(@RequestBody Input input) {
-		return "myvehicles.html";
+	@GetMapping("/Vehicle/Add")
+	public String addVehicle(Model model) {
+	//	model.addAttribute("cars", cars.findAll());
+		return "MyVehicles.html";
 	}
 
 }
