@@ -1,7 +1,5 @@
 package com.valuemotive.lemon;
 
-import java.time.LocalDateTime;
-
 import com.valuemotive.lemon.ParkingException;
 import com.valuemotive.lemon.ParkingSlot;
 
@@ -16,8 +14,6 @@ public class Car {
 		this.regNum = regNum;
 		this.type = type;
 	}
-
-
 
 	public CarTypeEnum getType() {
 		return type;
