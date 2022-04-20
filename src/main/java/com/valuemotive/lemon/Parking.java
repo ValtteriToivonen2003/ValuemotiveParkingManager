@@ -43,14 +43,14 @@ public class Parking {
 		return "succeeded";
 	}
 
-	public void checkout(Car car) {
+	public void checkout(Car car) throws Exception {
 		Optional<ParkingSlot> slot = parkingManager.getSlotByCar(this.getNbSlot().get(car.getType()), car);
-		slot.ifPresent(s -> {
+		  slot.ifPresent(s -> {
 			parkingManager.setCheckoutDate(LocalDateTime.now());
 			s.setAvailable(true);
 			s.setCar(null);
+				
 		});
-	
 
 	}
 
