@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Parking manager Page Layout</title>
+<title>Parking manager Page Layout</title>
 </head>
 <style>
 table {
@@ -384,7 +384,6 @@ footer {
 .body_sec {
 	margin-left: 20px;
 }
-
 </style>
 
 <body>
@@ -407,39 +406,32 @@ footer {
 	<div class="body_sec">
 		<section id="Content">
 
-			<!-- Table -->
-			<table style="width: 100%" id="carlist">
-				<thead>
-					<tr>
-						<td>Register Number</td>
-						<td>car Name</td>
-
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>input
-						<td>input
-					</tr>
-					<tr>
-						<td>input
-						<td>input
-					</tr>
-					<tr>
-						<td>input
-						<td>input
-					</tr>
-				</tbody>
-			</table>
-
-			<!-- button to open a popup -->
-
+			<h2>Logged in as "user"</h2>
+			
 			<button onclick="togglePopup()" class="first-button">Register
 				A New Vehicle</button>
 
-			<!-- Popup to register A new Permit -->
+			<!-- Table -->
+			<table style="width: 100%">
+				<thead>
+					<tr>
+						<th>Register Number</th>
+						<th>Car Name</th>
+						<th>Permit validity</th>
+					</tr>
+				</thead>
+
+				<tbody>
+				</tbody>
+			</table>
+
+
+			<!-- Popup window to register a new vehicle -->
 			<div class="popup" id="popup-1">
 				<div class="content">
+					<!-- close button -->
+
+					<div class="close-btn" onclick="togglePopup()">×</div>
 					<!-- close button -->
 
 
@@ -447,22 +439,24 @@ footer {
 
 					<!-- Registering a new permit for your vehicle  -->
 					<h1>give a permit to a vehicle</h1>
-					<label for="Vehicles">Choose your vehicle:</label> <select car="Vehicles" id="Vehicles">
+					<label for="Vehicles">Choose your vehicle:</label> <select
+						car="Vehicles" id="Vehicles">
 						<option value="Car1">Car1</option>
 						<option value="Car1">Car2</option>
 						<option value="Car1">Car3</option>
-					</select> <br> <input type="submit" class="second-button" value="Register a new permit"
-						onclick="togglePopup()">
+					</select> <br> <input type="submit" class="second-button"
+						value="Register a new permit" onclick="togglePopup()">
 
 
 					<!-- popup script -->
 					<script>
 						function togglePopup() {
 							document.getElementById("popup-1").classList
-								.toggle("active");
+									.toggle("active");
 						}
 					</script>
 				</div>
+			</div>
 		</section>
 	</div>
 

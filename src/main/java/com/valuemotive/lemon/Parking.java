@@ -15,10 +15,9 @@ public class Parking {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(Parking.class);
 
-
 	private final Map<CarTypeEnum, List<ParkingSlot>> nbSlot = new HashMap<>();
-	
-	private ParkingManager parkingManager ;
+
+	private ParkingManager parkingManager;
 
 	private Map<CarTypeEnum, List<ParkingSlot>> nbSlotMap;
 
@@ -45,11 +44,11 @@ public class Parking {
 
 	public void checkout(Car car) throws Exception {
 		Optional<ParkingSlot> slot = parkingManager.getSlotByCar(this.getNbSlot().get(car.getType()), car);
-		  slot.ifPresent(s -> {
+		slot.ifPresent(s -> {
 			parkingManager.setCheckoutDate(LocalDateTime.now());
 			s.setAvailable(true);
 			s.setCar(null);
-				
+
 		});
 
 	}

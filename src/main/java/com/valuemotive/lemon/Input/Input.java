@@ -1,6 +1,6 @@
 package com.valuemotive.lemon.Input;
 
-public class input {
+public class Input {
 
 	public String regNum;
 

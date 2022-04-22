@@ -1,5 +1,6 @@
 package com.valuemotive.lemon.Input;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,9 +8,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@Controller
-public class pageController {
+import com.valuemotive.lemon.CarTypeEnum;
 
+@Controller
+public class PageController {
+
+	@Autowired
 	private CarRepository carRepo;
 
 	@GetMapping("/parkingpage")
@@ -17,14 +21,16 @@ public class pageController {
 		return "ParkingPage.html";
 	}
 
-	@GetMapping("/MyVehicles")
-	public String myvehicles() {
+	@GetMapping("/myvehicles")
+	public String myvehicles(Model model) {
+		model.addAttribute("cars", carRepo.findAll());
 		return "MyVehicles.html";
 	}
 
-	@GetMapping("/Vehicle/Add")
-	public String addVehicle(Model model) {
-	//	model.addAttribute("cars", cars.findAll());
+	@PostMapping("/vehicle/add")
+	public String addVehicle(Model model, String regNum, String carName) {
+		carRepo.saveCar(regNum, carName, CarTypeEnum.GASOLINE);
+		model.addAttribute("cars", carRepo.findAll());
 		return "MyVehicles.html";
 	}
 
