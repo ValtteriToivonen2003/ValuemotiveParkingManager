@@ -1,10 +1,6 @@
 package com.valuemotive.lemon;
 
-import java.time.LocalDateTime;
-
 public class ParkingSlot {
-
-	
 
 	private long number;
 
@@ -39,7 +35,5 @@ public class ParkingSlot {
 	public void setAvailable(boolean available) {
 		this.available = available;
 	}
-
-
 
 }
